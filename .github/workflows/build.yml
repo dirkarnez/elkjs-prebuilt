@@ -51,12 +51,12 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
-          directory: 'lib'
+          directory: 'build'
           filename: "elkjs-${{ github.ref_name }}.zip"
           
       - name: Release prebuilt
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "lib/elkjs-${{ github.ref_name }}.zip"
+          artifacts: "build/elkjs-${{ github.ref_name }}.zip"
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
